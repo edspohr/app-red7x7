@@ -67,8 +67,42 @@ export const useMainStore = defineStore('main', () => {
         bio: 'Administrador de la plataforma Red 7x7.',
       },
     ],
-    boardMessages: [],
-    meetings: [],
+    boardMessages: [
+      {
+        id: 'm1',
+        title: '¡Bienvenida a la nueva plataforma!',
+        body: 'Estamos felices de lanzar esta nueva versión del portal. Explora los perfiles y no dudes en contactar a otros miembros. ¡El próximo encuentro será híbrido!',
+        pinned: true,
+        createdAt: 1725552000000,
+      },
+      {
+        id: 'm2',
+        title: 'Recordatorio: Reunión mensual',
+        body: 'Nuestra próxima reunión 7x7 será el último jueves del mes. Pronto enviaremos la invitación de calendario. ¡Preparen sus ideas!',
+        pinned: false,
+        createdAt: 1724957200000,
+      },
+    ],
+    meetings: [
+      {
+        id: 'r1',
+        titulo: 'Reunión 7x7 - Sinergias Fintech y EdTech',
+        fecha: '03-08-2025',
+        resumen: '',
+      },
+      {
+        id: 'r2',
+        titulo: 'Reunión 7x7 - Innovación en AgroTech',
+        fecha: '27-07-2025',
+        resumen: '',
+      },
+      {
+        id: 'r3',
+        titulo: 'Reunión General de Networking',
+        fecha: '14-07-2025',
+        resumen: '',
+      },
+    ],
   })
 
   function saveState() {
@@ -267,10 +301,44 @@ export const useMainStore = defineStore('main', () => {
     ]
   }
   if (!Array.isArray(state.value.boardMessages)) {
-    state.value.boardMessages = []
+    state.value.boardMessages = [
+      {
+        id: 'm1',
+        title: '¡Bienvenida a la nueva plataforma!',
+        body: 'Estamos felices de lanzar esta nueva versión del portal. Explora los perfiles y no dudes en contactar a otros miembros. ¡El próximo encuentro será híbrido!',
+        pinned: true,
+        createdAt: 1725552000000,
+      },
+      {
+        id: 'm2',
+        title: 'Recordatorio: Reunión mensual',
+        body: 'Nuestra próxima reunión 7x7 será el último jueves del mes. Pronto enviaremos la invitación de calendario. ¡Preparen sus ideas!',
+        pinned: false,
+        createdAt: 1724957200000,
+      },
+    ]
   }
   if (!Array.isArray(state.value.meetings)) {
-    state.value.meetings = []
+    state.value.meetings = [
+      {
+        id: 'r1',
+        titulo: 'Reunión 7x7 - Sinergias Fintech y EdTech',
+        fecha: '03-08-2025',
+        resumen: '',
+      },
+      {
+        id: 'r2',
+        titulo: 'Reunión 7x7 - Innovación en AgroTech',
+        fecha: '27-07-2025',
+        resumen: '',
+      },
+      {
+        id: 'r3',
+        titulo: 'Reunión General de Networking',
+        fecha: '14-07-2025',
+        resumen: '',
+      },
+    ]
   }
 
   // =======================================================
