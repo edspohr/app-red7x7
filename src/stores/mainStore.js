@@ -205,7 +205,65 @@ export const useMainStore = defineStore('main', () => {
   // Agrega este chequeo aquí:
   if (!Array.isArray(state.value.users) || state.value.users.length === 0) {
     state.value.users = [
-      // ...tus usuarios de mockup aquí...
+      {
+        id: 1,
+        nombre: 'Carlos Santana',
+        email: 'carlos.s@example.com',
+        password: '1234',
+        sector: 'Fintech',
+        rol: 'CEO y Fundador',
+        estado: 'Activo',
+        intereses: 'Inversión ángel, SaaS B2B, Blockchain',
+        avatar: 'https://placehold.co/120x120/D1FAE5/10B981?text=CS',
+        bio: 'Emprendedor en serie con más de 15 años de experiencia en el sector financiero. Apasionado por la tecnología y cómo puede resolver problemas reales. Busco activamente sinergias con otros sectores.',
+      },
+      {
+        id: 2,
+        nombre: 'Laura Gómez',
+        email: 'laura.g@example.com',
+        password: '1234',
+        sector: 'EdTech',
+        rol: 'Directora de Producto',
+        estado: 'Activo',
+        intereses: 'UX/UI, Inteligencia Artificial, Aprendizaje adaptativo',
+        avatar: 'https://placehold.co/120x120/DBEAFE/3B82F6?text=LG',
+        bio: 'Líder de producto con foco en crear experiencias educativas impactantes y accesibles para todos. Buscando siempre la próxima innovación en EdTech.',
+      },
+      {
+        id: 3,
+        nombre: 'Pedro Ramos',
+        email: 'pedro.r@example.com',
+        password: '1234',
+        sector: 'AgroTech',
+        rol: 'Fundador y CEO',
+        estado: 'Pendiente',
+        intereses: 'IoT, Drones, Sostenibilidad',
+        avatar: 'https://placehold.co/120x120/FEF3C7/F59E0B?text=PR',
+        bio: 'Ingeniero agrónomo convertido en emprendedor. Mi misión es optimizar el uso de recursos en el campo a través de la tecnología.',
+      },
+      {
+        id: 4,
+        nombre: 'Ana Torres',
+        email: 'ana.t@example.com',
+        password: '1234',
+        sector: 'HealthTech',
+        rol: 'Investigadora Principal',
+        estado: 'Activo',
+        intereses: 'Biotech, Data Science, Genómica',
+        avatar: 'https://placehold.co/120x120/FCE7F3/EC4899?text=AT',
+        bio: 'Científica dedicada a encontrar soluciones tecnológicas para los desafíos de la salud moderna. Abierta a colaboraciones interdisciplinarias.',
+      },
+      {
+        id: 5,
+        nombre: 'Admin',
+        email: 'admin@red7x7.cl',
+        password: 'admin',
+        rol: 'Administrador',
+        estado: 'Activo',
+        intereses: 'Gestión de Plataformas',
+        avatar: 'https://placehold.co/120x120/E0E7FF/4F46E5?text=A',
+        bio: 'Administrador de la plataforma Red 7x7.',
+      },
     ]
   }
   if (!Array.isArray(state.value.boardMessages)) {
