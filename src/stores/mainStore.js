@@ -180,6 +180,17 @@ export const useMainStore = defineStore('main', () => {
     return state.value.users.find((u) => u.id === state.value.currentUserId)
   })
 
+  function deepMerge(target, source) {
+    for (const key in source) {
+      if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+        target[key] = deepMerge(target[key] || {}, source[key])
+      } else {
+        target[key] = source[key]
+      }
+    }
+    return target
+  }
+
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw) {
@@ -206,5 +217,6 @@ export const useMainStore = defineStore('main', () => {
     updateMeetingSummary,
     callGemini,
     updateUser,
+    deepMerge,
   }
 })
