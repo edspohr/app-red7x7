@@ -67,7 +67,8 @@ export const useMainStore = defineStore('main', () => {
         bio: 'Administrador de la plataforma Red 7x7.',
       },
     ],
-    // ... tus otros datos ...
+    boardMessages: [],
+    meetings: [],
   })
 
   function saveState() {
