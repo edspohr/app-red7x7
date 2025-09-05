@@ -4,8 +4,8 @@ npm-debug.log*
 yarn-error.log*
 
 # Carpeta de compilación de Vite
-dist
-dist-ssr
+# dist
+# dist-ssr
 
 # Archivos de entorno (para guardar claves de API secretas)
 .env
