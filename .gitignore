@@ -1,0 +1,17 @@
+# Archivos de log y dependencias
+node_modules
+npm-debug.log*
+yarn-error.log*
+
+# Carpeta de compilación de Vite
+dist
+dist-ssr
+
+# Archivos de entorno (para guardar claves de API secretas)
+.env
+.env.local
+.env.*.local
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
