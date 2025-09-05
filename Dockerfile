@@ -1,21 +1,20 @@
-# Use a Node.js base image
+# Usa una imagen base de Node.js
 FROM node:18-slim
 
-# Set the working directory
+# Establece el directorio de trabajo
 WORKDIR /usr/src/app
 
-# Copy the package.json and install dependencies
-COPY package*.json ./
-RUN npm install
+# Copia los archivos de configuración y dependencias
+COPY package.json ./
 
-# Copy the dist folder and its contents
+# Instala las dependencias, incluyendo `serve`
+RUN npm install --only=production
+
+# Copia la carpeta de compilación de la aplicación de Vue.js
 COPY dist ./dist
 
-# Copy the server file
-COPY server.js ./
-
-# Expose the port
+# Expone el puerto por defecto de Cloud Run
 EXPOSE 8080
 
-# Run the server
-CMD ["node", "server.js"]
+# Comando para iniciar el servidor de archivos estáticos
+CMD ["npm", "start"]
