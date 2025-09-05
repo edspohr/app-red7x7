@@ -182,7 +182,11 @@ export const useMainStore = defineStore('main', () => {
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    if (raw) state.value = JSON.parse(raw)
+    if (raw) {
+      const loaded = JSON.parse(raw)
+      // Mergea el estado inicial con el cargado
+      state.value = { ...state.value, ...loaded }
+    }
   } catch (e) {
     console.warn('No se pudo cargar el estado', e)
   }
