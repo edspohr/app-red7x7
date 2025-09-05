@@ -202,6 +202,19 @@ export const useMainStore = defineStore('main', () => {
     console.warn('No se pudo cargar el estado', e)
   }
 
+  // Agrega este chequeo aquí:
+  if (!Array.isArray(state.value.users) || state.value.users.length === 0) {
+    state.value.users = [
+      // ...tus usuarios de mockup aquí...
+    ]
+  }
+  if (!Array.isArray(state.value.boardMessages)) {
+    state.value.boardMessages = []
+  }
+  if (!Array.isArray(state.value.meetings)) {
+    state.value.meetings = []
+  }
+
   // =======================================================
   // 2. AQUÍ LA AÑADIMOS AL RETURN
   // =======================================================
