@@ -1,20 +1,21 @@
-# Usa una imagen base oficial de Node.js
+# Use a Node.js base image
 FROM node:18-slim
 
-# Define el directorio de trabajo
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copia los archivos de configuración de dependencias
+# Copy the package.json and install dependencies
 COPY package*.json ./
-
-# Instala las dependencias
 RUN npm install
 
-# Copia el resto del código de la aplicación
-COPY . .
+# Copy the dist folder and its contents
+COPY dist ./dist
 
-# Expone el puerto donde la app escuchará
+# Copy the server file
+COPY server.js ./
+
+# Expose the port
 EXPOSE 8080
 
-# Comando para iniciar el servidor
-CMD [ "npm", "start" ]
+# Run the server
+CMD ["node", "server.js"]
